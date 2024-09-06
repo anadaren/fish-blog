@@ -6,6 +6,7 @@ body{
     padding: 0 20px;
     font-family: 'Noto Serif', serif;
     max-width: 1200px;
+    background-color: #ddeef8;
 }
     
 p, h1, h2, h3, a, ul{
@@ -21,7 +22,7 @@ nav{
     justify-content: space-between;
     margin-bottom: 60px;
     padding-bottom: 10px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #7795a7;
     text-transform: uppercase;
 }
 nav ul{
@@ -61,10 +62,10 @@ h3{
     display: block;
     margin: 40px 0;
     padding-left: 30px;
-    border-left: 6px solid crimson;
+    border-left: 6px solid #2596be;
   }
   .blogs a:hover h3{
-    color: crimson;
+    color: #2596be;
   }
 
 /* details styles */
@@ -105,7 +106,7 @@ textarea{
 }
 .create-blog button{
     margin-top: 20px;
-    background: crimson;
+    background: #2596be;
     color: white;
     padding: 6px;
     border: 0;
