@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "https://github.com/anadaren/fish-blog",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
