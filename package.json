@@ -19,5 +19,8 @@
   },
   "devDependencies": {
     "firebase-tools": "^1.2.0"
+  },
+  "scripts": {
+  "build": "echo 'No build step needed'"
   }
 }
