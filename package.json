@@ -4,11 +4,9 @@
   "description": "A blogging website, but for fish",
   "main": "server.js",
   "scripts": {
-  "build:index": "ejs views/blogs/index.ejs -o public/index.html -d data/index.json",
-  "build:about": "ejs views/about.ejs -o public/about.html -d data/about.json",
-  "build": "npm run build:index && npm run build:about",
-  "serve": "firebase serve",
-  "deploy": "npm run build && firebase deploy"
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "vercel-build": "echo 'No build step needed'"
 },
   "author": "",
   "license": "ISC",
