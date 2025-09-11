@@ -1,0 +1,15 @@
+{
+  "title": "Home",
+  "blogs": [
+    {
+      "_id": "1",
+      "title": "My first blog",
+      "snippet": "This is a snippet of my first blog..."
+    },
+    {
+      "_id": "2",
+      "title": "Another blog post",
+      "snippet": "Snippet for the second blog..."
+    }
+  ]
+}

@@ -1,25 +1,32 @@
+<% 
+  // Destructure the data from locals so we can use `title` and `blogs` directly
+  const { title, blogs } = locals; 
+%>
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('../partials/head.ejs') %>
+  <!-- Pass title to head partial -->
+  <%- include('../partials/head.ejs', { title }) %>
+
   <body>
-    
+    <!-- Include navigation partial -->
     <%- include('../partials/nav.ejs') %>
 
     <div class="blogs content">
-        <h2>All blogs</h2>
+      <h2>All blogs</h2>
 
-        <% if(blogs.length > 0) { %>
-            <% blogs.forEach(blog => { %>
-                <a class="single" href="/blogs/<%= blog._id %>">
-                <h3 class="title"><%= blog.title %></h3>
-                <p class="snippet"><%= blog.snippet %></p>
-                </a>
-            <% }); %>
-        <% } else { %>
-            <p>There are no blogs to display...</p>
-        <% } %>
+      <% if (blogs && blogs.length > 0) { %>
+        <% blogs.forEach(blog => { %>
+          <a class="single" href="/blogs/<%= blog._id %>">
+            <h3 class="title"><%= blog.title %></h3>
+            <p class="snippet"><%= blog.snippet %></p>
+          </a>
+        <% }); %>
+      <% } else { %>
+        <p>There are no blogs to display...</p>
+      <% } %>
     </div>
 
+    <!-- Include footer partial -->
     <%- include('../partials/footer.ejs') %>
   </body>
 </html>

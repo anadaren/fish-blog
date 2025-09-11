@@ -1,12 +1,15 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
+  "description": "A blogging website, but for fish",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
+  "build:index": "ejs views/blogs/index.ejs -o public/index.html -d data/index.json",
+  "build:about": "ejs views/about.ejs -o public/about.html -d data/about.json",
+  "build": "npm run build:index && npm run build:about",
+  "serve": "firebase serve",
+  "deploy": "npm run build && firebase deploy"
+},
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -20,7 +23,13 @@
   "devDependencies": {
     "firebase-tools": "^1.2.0"
   },
-  "scripts": {
-  "build": "echo 'No build step needed'"
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anadaren/fish-blog.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/anadaren/fish-blog/issues"
+  },
+  "homepage": "https://github.com/anadaren/fish-blog#readme"
 }
