@@ -6,8 +6,11 @@ const blogRoutes = require('./routes/blogRoutes');
 // express app
 const app = express();
 
+
+
 // connect to mongoDB, then listens for requests
-const dbURI = 'mongodb+srv://anadaren:Q0EsS5BeO3gy0xjE@cluster0.ekgpp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+require('dotenv').config();
+const dbURI = process.env.MONGODB_URI || 'mongodb+srv://anadaren:Q0EsS5BeO3gy0xjE@cluster0.ekgpp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 mongoose.connect(dbURI)
     .then((result) => console.log('connected to db'), app.listen(3000))
     .catch((err) => console.log(err));
