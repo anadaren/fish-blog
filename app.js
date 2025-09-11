@@ -7,13 +7,21 @@ const blogRoutes = require('./routes/blogRoutes');
 const app = express();
 
 
+require('dotenv').config();
 
 // connect to mongoDB, then listens for requests
-require('dotenv').config();
 const dbURI = process.env.MONGODB_URI;
 mongoose.connect(dbURI)
-    .then((result) => console.log('connected to db'), app.listen(3000))
-    .catch((err) => console.log(err));
+  .then((result) => {
+    console.log('✅ connected to db');
+    
+    // --- START SERVER ONLY AFTER DB CONNECTS ---
+    const PORT = process.env.PORT || 3000;
+    app.listen(PORT, () => {
+      console.log(`🚀 Server running on port ${PORT}`);
+    });
+  })
+  .catch((err) => console.log(err));
 
 // register view engine
 app.set('view engine', 'ejs');
