@@ -7,5 +7,10 @@
   <li><a href="/">Homepage</a></li>
   <li><a href="/about">About page</a></li>
   <li><a href="/blogs/create">New Blog</a></li>
+  <% if (user) { %>
+    <li>Hello, <%= user.username %>! <br><a href="/logout">Logout</a></li>
+  <% } else { %>
+    <li><a href="/login">Login</a></li>
+  <% } %>
 </ul>
 </nav>
